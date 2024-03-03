@@ -11,6 +11,7 @@ class MainActivity : ComponentActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //Now lets see if it adds to branch
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val billEditText: EditText = findViewById(R.id.editTextText)
