@@ -56,6 +56,7 @@ class MainActivity : ComponentActivity() {
                     Row() {
                         finalVal(perHeadVal)
                     }
+                    //Thi is an added comment to JetPack Branch
                     Column {
                         numDinersEditText(diners = diners) {diners = it}
                         billEditText(bill = totalBill) {totalBill = it}
