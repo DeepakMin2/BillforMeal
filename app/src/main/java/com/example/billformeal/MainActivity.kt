@@ -32,14 +32,16 @@ import com.example.billformeal.ui.theme.Purple80
 import com.example.billformeal.ui.theme.PurpleGrey40
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.Color
+import com.example.billformeal.ui.theme.PurpleGrey80
 
 class MainActivity : ComponentActivity() {
 
+// This is Kotlin program for the sam Bill for Meal Application
     private var perHeadVal by  mutableStateOf("$0.00")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //Now lets see if it adds to branch
         super.onCreate(savedInstanceState)
         setContent {
             var totalBill by remember { mutableStateOf("") }
@@ -76,14 +78,14 @@ class MainActivity : ComponentActivity() {
     private fun finalVal(perHeadVal: String) {
         ElevatedCard(elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
             modifier = Modifier.wrapContentSize(),
-            colors = CardDefaults.cardColors(containerColor = PurpleGrey40)
+            colors = CardDefaults.cardColors(containerColor = PurpleGrey80)
         ) {
             Text(text = perHeadVal , fontSize = 50.sp )
         }
     }
 
     @Composable
-    fun button15(tip: Int = 15, diners: String, totalBill: String) {
+    private fun button15(tip: Int = 15, diners: String, totalBill: String) {
         ElevatedButton(onClick = { setPriceValue(tip,diners,totalBill) },
             modifier = Modifier.wrapContentSize(),
             colors = ButtonDefaults.elevatedButtonColors(containerColor = Purple80)
@@ -93,7 +95,7 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun button18(tip: Int = 18, diners: String, totalBill: String) {
+    private fun button18(tip: Int = 18, diners: String, totalBill: String) {
         FilledTonalButton(onClick = { setPriceValue(tip, diners, totalBill) },
             modifier = Modifier.wrapContentSize()
         ) {
@@ -102,7 +104,7 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun button10(tip: Int = 10, diners: String, totalBill: String){
+    private fun button10(tip: Int = 10, diners: String, totalBill: String){
         Button(onClick = { setPriceValue(tip,diners, totalBill) }, modifier = Modifier.wrapContentSize()) {
             Text(text = "10%")
         }
@@ -110,7 +112,7 @@ class MainActivity : ComponentActivity() {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun numDinersEditText(diners: String, onNumDinersChange: (String) -> Unit) {
+    private fun numDinersEditText(diners: String, onNumDinersChange: (String) -> Unit) {
 
 
         OutlinedTextField(
@@ -123,7 +125,7 @@ class MainActivity : ComponentActivity() {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun billEditText(bill: String, onBillChange: (String)->Unit) {
+    private fun billEditText(bill: String, onBillChange: (String)->Unit) {
 
 
         OutlinedTextField(
@@ -136,7 +138,7 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     @Preview(showBackground = true, showSystemUi = true)
-    fun buttonPreview(){
+    private fun buttonPreview(){
         var bill by remember { mutableStateOf("") }
         var diners by remember { mutableStateOf("") }
 
