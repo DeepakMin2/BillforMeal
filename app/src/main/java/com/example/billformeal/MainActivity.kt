@@ -37,7 +37,7 @@ import com.example.billformeal.ui.theme.PurpleGrey80
 
 class MainActivity : ComponentActivity() {
 
-
+// This is Kotlin program for the sam Bill for Meal Application
     private var perHeadVal by  mutableStateOf("$0.00")
 
 
